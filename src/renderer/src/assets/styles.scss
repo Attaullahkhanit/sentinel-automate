@@ -1,0 +1,93 @@
+:root {
+  /* Ultra-dark tech palette from screenshots */
+  --bg-main: #0a0a0b;
+  --bg-surface: #111114;
+  --bg-surface-light: #18181c;
+  
+  --border-color: #27272a;
+  
+  --text-primary: #d4d4d8;
+  --text-secondary: #71717a;
+  --text-muted: #52525b;
+  
+  /* Vibrant Accents */
+  --primary: #3b82f6;      /* Blue buttons/accents */
+  --primary-bg: #1e3a8a;   /* Semi-transparent blue */
+  --success: #10b981;      /* Green headers/statuses */
+  --danger: #ef4444;       /* Red for failures or deletes */
+  --warning: #f59e0b;      /* Yellow for queued */
+  
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Element Plus overrides */
+  --el-color-primary: var(--primary);
+  --el-color-success: var(--success);
+  --el-color-warning: var(--warning);
+  --el-color-danger: var(--danger);
+  
+  --el-bg-color: var(--bg-main);
+  --el-bg-color-overlay: var(--bg-surface);
+  --el-text-color-primary: var(--text-primary);
+  --el-text-color-regular: var(--text-primary);
+  --el-border-color: var(--border-color);
+  --el-border-color-light: var(--border-color);
+  --el-fill-color-light: var(--bg-surface-light);
+  --el-fill-color-blank: var(--bg-surface);
+  
+  --el-border-radius-base: 6px;
+  --el-component-size: 32px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tech-header {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
