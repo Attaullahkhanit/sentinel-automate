@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #1A1A1D;
+  --color-brand-sub: #27272A;
+  --color-brand-accent: #0F4C81;
+  --color-brand-accent-hover: #145E9E;
+  --color-brand-success: #2ECC71;
+  --color-brand-danger: #E74C3C;
+  --color-brand-idle: #95A5A6;
+  
+  --font-mono: "Roboto Mono", "Courier New", monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* Global Styles */
+:root, html.dark {
+  background-color: var(--color-brand-bg);
+  color: #E2E8F0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color-scheme: dark;
+}
+
+/* Element Plus Dark Mode Overrides for "Berlin-Tech" Aesthetic */
+html.dark {
+  --el-bg-color: var(--color-brand-bg);
+  --el-bg-color-page: var(--color-brand-bg);
+  --el-bg-color-overlay: var(--color-brand-sub);
+  --el-border-color: #3f3f46;
+  --el-border-color-light: #27272A;
+  --el-border-color-lighter: #27272A;
+  --el-border-color-extra-light: #27272A;
+  --el-fill-color-blank: var(--color-brand-bg);
+  
+  --el-text-color-primary: #f4f4f5;
+  --el-text-color-regular: #a1a1aa;
+  
+  --el-color-primary: var(--color-brand-accent);
+  --el-color-primary-light-3: #145E9E;
+  --el-color-primary-light-5: #1A6DB1;
+  --el-color-primary-light-9: rgba(15, 76, 129, 0.2);
+  
+  --el-color-success: var(--color-brand-success);
+  --el-color-danger: var(--color-brand-danger);
+
+  --el-border-radius-base: 4px;
+  --el-border-radius-small: 2px;
+  --el-font-family: var(--font-sans);
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0 h-screen overflow-hidden bg-brand-bg text-[#E2E8F0] antialiased;
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
+}
+
+@utility font-technical {
+  font-family: var(--font-mono);
+}
+
+/* Global Element Plus Table overrides as Tailwind Utilities */
+@layer components {
+  .el-table {
+    --el-table-bg-color: transparent !important;
+    --el-table-tr-bg-color: transparent !important;
+    --el-table-header-bg-color: transparent !important;
+    --el-table-border: 1px solid #27272A !important;
+    --el-table-border-color: #27272A !important;
+    @apply !bg-transparent;
+  }
+
+  .el-table th.el-table__cell,
+  .el-table td.el-table__cell {
+    @apply !border-b !border-[#27272A] !bg-transparent;
+  }
+
+  .el-table--enable-row-hover .el-table__body tr:hover > td {
+    @apply !bg-[rgba(255,255,255,0.05)];
+  }
+}
+

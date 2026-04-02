@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Setting {
+  key   String @id
+  value String
+}
+
+model Task {
+  id         Int       @id @default(autoincrement())
+  name       String
+  url        String
+  browser    String    @default("chromium")
+  status     String    @default("idle")
+  schedule   String?   
+  is_headed  Boolean   @default(false)
+  last_run   DateTime?
+
+  @@index([status])
+}
+
+model Log {
+  id         Int      @id @default(autoincrement())
+  task_id    Int
+  message    String
+  level      String   @default("info")
+  created_at DateTime @default(now())
+
+  @@index([task_id])
+  @@index([created_at])
+}
+
+model Email {
+  id          Int      @id @default(autoincrement())
+  sender      String
+  subject     String
+  body        String?
+  sentiment   String   @default("action")
+  is_read     Boolean  @default(false)
+  received_at DateTime
+
+  @@index([sender])
+  @@index([is_read])
+}
+
+model Credential {
+  id           Int    @id @default(autoincrement())
+  service_name String
+  username     String
+  password     String
+  totp_secret  String?
+  group_id     String
+
+  @@index([service_name])
+}
