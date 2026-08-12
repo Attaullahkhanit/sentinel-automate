@@ -1,4 +1,4 @@
-import { chromium, Browser, Page } from 'playwright'
+import { chromium, type Browser } from 'playwright'
 
 export class AutomationService {
   private browser: Browser | null = null

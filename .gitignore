@@ -10,7 +10,15 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+dist-electron
 *.local
+
+# Prisma generated client
+/generated
+
+# SQLite database files
+*.db
+*.db-journal
 
 # Editor directories and files
 .vscode/*

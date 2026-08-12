@@ -23,6 +23,7 @@ export default defineConfig({
                 'playwright',
                 'playwright-core',
                 '@prisma/client',
+                /^@prisma\/client\//,
                 '@prisma/adapter-better-sqlite3',
                 'better-sqlite3'
               ]
